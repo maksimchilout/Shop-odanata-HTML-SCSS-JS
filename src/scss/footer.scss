@@ -1,0 +1,133 @@
+//====================================================================================================
+.footer{
+	position: relative;
+	z-index: 1;
+}
+.footer {
+	@include adaptiveValue("padding-top", 130, 40);
+	@include adaptiveValue("padding-bottom", 50, 30);
+	// .footer__container
+	&__container {
+	}
+
+	// .footer__body
+	&__body {
+		
+	}
+
+	// footer title
+	&__title{
+		@include adaptiveValue("font-size", 54, 36);
+		text-align: center;
+		margin-bottom: 70px;
+		// font-size: rem(42);
+	}
+
+	// footer pay
+	&__pay{
+		
+		max-width: 920px;
+		img{
+			width: 100%;
+		}
+		margin: 30px auto;
+	}
+	
+
+	// footer copy
+	&__copy {
+		text-align: center;
+		p{
+			font-size: rem(18);
+			line-height: 140%;
+		}
+	}
+}
+.footer {
+
+	// .footer__content
+
+	&__content {
+		display: grid;
+		gap: 30px;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width:$tablet){
+			grid-template-columns: repeat(1, 1fr);
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		@media (max-width:520px){
+			grid-template-columns: repeat(1, minmax(230px, 480px));
+			// grid-template-columns: minmax(230px, 320px);
+		}
+	}
+
+	// .footer__column
+
+	&__column {
+		// background: #000;
+	}
+}
+.column-data {
+
+	// .column-data__numbers
+
+	&__numbers {
+		
+		@include adaptiveValue("font-size", 24, 18);
+		line-height: 160%;
+		margin-bottom: 25px;
+	}
+
+	// .column-data__email
+
+	&__email {
+		@include adaptiveValue("font-size", 24, 18);
+		line-height: 160%;
+		margin-bottom: 25px;
+	}
+
+	// .column-data__adress
+
+	&__adress {
+		@include adaptiveValue("font-size", 24, 18);
+		line-height: 160%;
+		margin-bottom: 25px;
+	}
+
+	// .column-data__media
+
+	&__media {
+		justify-content: flex-start;
+		.footer-media{
+			justify-content: flex-start;
+			
+		}
+	}
+}
+
+
+.form{
+	max-width: 100%;
+	&__input{
+		border-radius: 10px;
+		padding: 10px;
+		width: 100%;
+		height: rem(50);
+		margin-bottom: 30px;
+		@media (max-width: 520px){
+			width: 100%;
+		}
+	}
+
+	&__textarea{
+		width: 100%;
+		border-radius: 10px;
+		margin-bottom: 30px;
+		padding: 10px;
+		@media (max-width: 520px){
+			width: 100%;
+		}
+	}
+}
+//====================================================================================================

@@ -1,0 +1,26 @@
+async function data() {
+  try {
+  await fetch('https://belarusbank.by/api/kursExchange')
+  .then(response => response.json())
+  .then(json => console.log(json))
+  } catch(err) {
+    console.log(err); // TypeError: failed to fetch
+  }
+}
+
+data();
+
+
+
+
+
+async function data() {
+  try {
+  const response = await fetch('https://belarusbank.by/api/kursExchange')
+  console.log(response)
+  } catch(err) {
+    console.log(err);
+  }
+}
+
+data();

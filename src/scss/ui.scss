@@ -1,0 +1,84 @@
+
+//global background
+[data-bg] {
+	overflow: hidden;
+	position: relative;
+}
+
+
+.bg-item{
+	content: '';
+	position: absolute;
+	top: -30%;
+	left: 0;
+	width: 100%;
+	height: 160%;
+	background: url('../img/odonata/bg/bg.jpg') center / cover no-repeat;
+	opacity: 0.2;
+	// background: rgb(181, 180, 178);
+	
+	
+}
+
+
+//header of the block
+.block-header {
+	@extend %cor_semibold;
+	display: grid;
+	gap: 3px;
+	justify-items: center;
+	// .block-header__sub-title
+	&__sub-title {
+		color: $mainColor;
+		@include adaptiveValue("font-size", 34, 28);
+		line-height: 130%;
+		letter-spacing: 0.04em;
+		display: grid;
+		gap: 8px;
+		justify-items: center;
+		&::after{
+			content: "";
+			@extend %ic;
+			// display: block;
+			color: $mainYellow;
+			width: 140px;
+			height: 40px;
+			background: url('../img/odonata/ic/1.png') 0 0 no-repeat;
+			background-size: contain;
+			font-size: em(9, 23);
+		}
+	}
+	// .block-header__title
+	&__title {
+		color: $mainYellow;
+		@include adaptiveValue("font-size", 90, 35);
+		line-height: 130%;
+		letter-spacing: 0.04em;
+	}
+	&_big{
+		.block-header__title{
+			@include adaptiveValue("font-size", 90, 40);
+		}
+	}
+	&_left{
+		justify-items: stretch;
+		.block-header__sub-title {
+			justify-items: stretch;
+		}
+	}
+}
+
+//           modificator text
+[class*="__text"]{
+	line-height: 175%;
+}
+
+._anim-show{
+	transform: translate(0px, 120%);
+	opacity: 0;
+	transition: all 0.8s ease-in-out;
+	&._active{
+		opacity: 1;
+		transform: translate(0px, 0px);
+	}
+}
